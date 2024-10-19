@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using CustomerApiConsoleApp.Domain.Models;
+﻿using CustomerApiConsoleApp.Domain.Models;
 
 namespace CustomerApiConsoleApp.Application.Interfaces
 {

@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading.Tasks;
-using CustomerApiConsoleApp.Application.Dto;
+﻿using CustomerApiConsoleApp.Application.Dto;
 using CustomerApiConsoleApp.Application.Interfaces;
 using CustomerApiConsoleApp.Domain.Models;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 
 namespace CustomerApiConsoleApp.Application.Services
 {

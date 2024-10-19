@@ -1,17 +1,9 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using CustomerApiConsoleApp.Application.Interfaces;
-using CustomerApiConsoleApp.Application.Services;
-using CustomerApiConsoleApp.Domain.Models;
-using CustomerApiConsoleApp.Infrastructure.Data;
-using CustomerApiConsoleApp.Infrastructure.Repositories;
-using Microsoft.Extensions.Configuration;
+﻿using CustomerApiConsoleApp.Application.Interfaces;
 using CustomerApiConsoleApp.Presentation.Configuration;
-using NLog;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NLog;
 
 namespace CustomerApiConsoleApp.Presentation
 {
@@ -48,7 +40,7 @@ namespace CustomerApiConsoleApp.Presentation
             {
                 LogManager.Shutdown();
             }
-            
+
 
 
         }

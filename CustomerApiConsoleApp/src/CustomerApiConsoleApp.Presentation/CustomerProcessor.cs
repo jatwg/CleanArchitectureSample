@@ -1,10 +1,5 @@
 ﻿using CustomerApiConsoleApp.Application.Interfaces;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CustomerApiConsoleApp.Presentation
 {
@@ -24,7 +19,7 @@ namespace CustomerApiConsoleApp.Presentation
         public async Task ProcessCustomersAsync()
         {
             var customers = await _customerService.GetCustomersAsync();
-            
+
             foreach (var customer in customers)
             {
                 await _customerRepository.AddCustomerAsync(customer);

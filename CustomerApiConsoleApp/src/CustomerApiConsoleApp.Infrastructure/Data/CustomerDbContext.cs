@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using CustomerApiConsoleApp.Domain.Models;
-using System.Collections.Generic;
+﻿using CustomerApiConsoleApp.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CustomerApiConsoleApp.Infrastructure.Data
 {
