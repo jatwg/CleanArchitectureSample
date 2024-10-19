@@ -5,11 +5,15 @@ using CustomerApiConsoleApp.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog;
+using NLog.Extensions.Logging;
 
 namespace CustomerApiConsoleApp.Presentation.Configuration
 {
@@ -24,7 +28,13 @@ namespace CustomerApiConsoleApp.Presentation.Configuration
                 .AddScoped<ICustomerService, CustomerService>()
                 .AddSingleton<IConfiguration>(configuration)
                 .AddHttpClient()
-                .BuildServiceProvider();
+                .AddLogging(loggingBuilder =>
+                {
+                    // configure Logging with NLog
+                    loggingBuilder.ClearProviders();
+                    loggingBuilder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug);
+                    loggingBuilder.AddNLog(configuration);
+                }).BuildServiceProvider();
         }
     }
 }
