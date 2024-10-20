@@ -20,13 +20,20 @@ namespace CustomerApiConsoleApp.Presentation
         {
             var customers = await _customerService.GetCustomersAsync();
 
-            foreach (var customer in customers)
+            if (customers.Any())
             {
-                await _customerRepository.AddCustomerAsync(customer);
+                foreach (var customer in customers)
+                {
+                    await _customerRepository.AddCustomerAsync(customer);
+                }
+
+                await _customerRepository.SaveChangesAsync();
+                _logger.LogInformation($"Processed {customers.Count} customers.");
             }
-
-            await _customerRepository.SaveChangesAsync();
-
+            else
+            {
+                _logger.LogInformation("No customers to process.");
+            }
         }
     }
 }
